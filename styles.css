@@ -29,6 +29,22 @@ input{
     color: white;
     font-size: 2.5vw;
 }
+input:focus{
+    outline: 1;
+    outline-color: rgb(148, 148, 148);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 249, 249, 0.493);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(148, 148, 148);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(148, 148, 148);
+  }
 button{
     background-color: rgb(37, 81, 201);
     border: white;

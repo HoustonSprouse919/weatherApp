@@ -2,6 +2,9 @@ let userInput = 'Charlotte';
 function convertKelvin(kelvin) {
   return (((kelvin - 273.15) * 9) / 5 + 32).toFixed(1);
 }
+function convertMiles(kilo) {
+  return (kilo / 1.609).toFixed(1);
+}
 async function getMainStuff() {
   const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${userInput}&APPID=651b36dd9ec2d5156544989665f507bd`, { mode: 'cors' });
   const data = await response.json();
@@ -10,15 +13,15 @@ async function getMainStuff() {
     long: data.coord.lon,
     mainWeatherCondition: data.weather[0].main,
     weatherDescription: data.weather[0].description,
-    temp: convertKelvin(data.main.temp),
-    feelsLike: convertKelvin(data.main.feels_like),
-    tempMax: convertKelvin(data.main.temp_max),
-    tempMin: convertKelvin(data.main.temp_min),
-    humidity: data.main.humidity,
-    pressure: data.main.pressure,
+    temp: `${convertKelvin(data.main.temp)}°`,
+    feelsLike: `${convertKelvin(data.main.feels_like)}°`,
+    tempMax: `${convertKelvin(data.main.temp_max)}°`,
+    tempMin: `${convertKelvin(data.main.temp_min)}°`,
+    humidity: `${data.main.humidity}%`,
+    pressure: `${data.main.pressure} hPa`,
     location: data.name,
     country: data.sys.country,
-    windSpeed: data.wind.speed,
+    windSpeed: `${convertMiles(data.wind.speed)} Mph`,
     icon: data.weather[0].icon,
   };
   (function displayData() {
