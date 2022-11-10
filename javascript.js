@@ -1,5 +1,6 @@
+const userInput = 'Charlotte';
 async function getMainStuff() {
-  const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=651b36dd9ec2d5156544989665f507bd', { mode: 'cors' });
+  const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${userInput}&APPID=651b36dd9ec2d5156544989665f507bd`, { mode: 'cors' });
   const data = await response.json();
   const currentWeatherData = {
     lat: data.coord.lat,
@@ -16,6 +17,9 @@ async function getMainStuff() {
     country: data.sys.country,
     windSpeed: data.wind.speed,
   };
+  document.querySelector('#location').append(currentWeatherData.location);
+  document.querySelector('#country').append(currentWeatherData.country);
+  document.querySelector('#mainWeather').append(currentWeatherData.mainWeatherCondition);
   /* console.log(`data is temp:${temp}  feels like: ${feelsLike} max temp:${tempMax} min
   temp:${tempMin} humidity:${humidity} pressure: ${pressure}`);
    console.log(`the coordinates are ${lat},${long}`); */
