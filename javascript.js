@@ -17,11 +17,26 @@ async function getMainStuff() {
     country: data.sys.country,
     windSpeed: data.wind.speed,
   };
-  document.querySelector('#location').append(currentWeatherData.location);
-  document.querySelector('#country').append(currentWeatherData.country);
-  document.querySelector('#mainWeather').append(currentWeatherData.mainWeatherCondition);
-  /* console.log(`data is temp:${temp}  feels like: ${feelsLike} max temp:${tempMax} min
-  temp:${tempMin} humidity:${humidity} pressure: ${pressure}`);
-   console.log(`the coordinates are ${lat},${long}`); */
+  (function displayData() {
+    function specificData(location, dataWanted) {
+      document.querySelector(`#${location}`).textContent = currentWeatherData[dataWanted];
+    }
+    specificData('location', 'location');
+    specificData('country', 'country');
+    specificData('mainWeather', 'mainWeatherCondition');
+    specificData('temp', 'temp');
+    specificData('feelsLike', 'feelsLike');
+    specificData('tempHigh', 'tempMax');
+    specificData('tempLow', 'tempMin');
+    specificData('weatherDescription', 'weatherDescription');
+    specificData('windSpeed', 'windSpeed');
+    specificData('humidity', 'humidity');
+    specificData('pressure', 'pressure');
+  }());
 }
-getMainStuff();
+function changeWeather() {
+  const div = document.getElementsByClassName('dataGoesHere');
+  div.textContent = '';
+  getMainStuff();
+}
+changeWeather();
