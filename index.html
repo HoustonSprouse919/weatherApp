@@ -9,19 +9,33 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    <div>
+    <div class = "mainStuff">
     <h1>The weather for today</h1>
-    <h2>Location: <span id ="location" class ="dataGoesHere"></span></h2>
-    <h2><span id ="country" class ="dataGoesHere"></span></h2>
-    <h2>Weather conditions: <span id = "mainWeather" class ="dataGoesHere"></span></h2>
-    <h2>temp<span id = "temp" class ="dataGoesHere"></span></h2>
-    <h2>feels like<span id = "feelsLike" class ="dataGoesHere"></span></h2>
-    <h2>temp high: <span id ="tempHigh" class ="dataGoesHere"></span></h2>
-    <h2>temp low<span id = "tempLow" class ="dataGoesHere"></span></h2>
-    <h2>weather description:<span id ="weatherDescription" class ="dataGoesHere"></span></h2>
-    <h2>wind speed:<span id = "windSpeed" class ="dataGoesHere"></span></h2>
-    <h2>humidity:<span id ="humidity" class ="dataGoesHere"></span></h2>
-    <h2>pressure:<span id = "pressure" class ="dataGoesHere"></span></h2>
+    <form class = "searchBox">
+        <input type="text"  id = "inputBox" name ="inputBox"placeholder="input new location here...">
+        <button type="button" id="searchButton">search</button>
+        </form>
+    <div id ="locationContainer">
+    <h2>Location: <span id ="location" class ="dataGoesHere"></span> <span id ="country" class ="dataGoesHere"></span></h2>
+</div>
+<div id ="currentWeatherDiv">
+    <h2>Weather conditions: <div id = "mainWeather" class ="dataGoesHere"></div></h2>
+    <div class ="currentWeatherImageDiv">
+        <img class ="currentWeatherImage" src ="">
+    </div>
+    <h2>Weather description:<div id ="weatherDescription" class ="dataGoesHere"></div></h2>
+</div>
+    <div id ="tempStuff">
+    <h2>temp<div id = "temp" class ="dataGoesHere"></div></h2>
+    <h2>feels like<div id = "feelsLike" class ="dataGoesHere"></div></h2>
+    <h2>temp high: <div id ="tempHigh" class ="dataGoesHere"></div></h2>
+    <h2>temp low<div id = "tempLow" class ="dataGoesHere"></div></h2>
+</div>
+<div id ="lessImportantStuff">
+    <h2>wind speed:<div id = "windSpeed" class ="dataGoesHere"></div></h2>
+    <h2>humidity:<div id ="humidity" class ="dataGoesHere"></div></h2>
+    <h2>pressure:<div id = "pressure" class ="dataGoesHere"></div></h2>
+</div>
 </div>
 </body>
 </html>

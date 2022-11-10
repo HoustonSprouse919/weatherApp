@@ -1,9 +1,74 @@
 body{
-    background-image: url(x-wen-vgDzKIObrxs-unsplash.jpg);
+    background-image: url(fishing-evening-digital-art-4k-lc.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: grid;
     height: 100vh;
     margin: 0px;
+    place-items: center;
     width: 100vw;
+}
+.mainStuff{
+    color: white;
+    display: inline-block;
+    font-size: 1.25vw;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+.searchBox{
+    display: flex;
+    align-items: center;
+}
+input{
+    background-color: rgba(128, 128, 128, 0.26);
+    border-color: #000000;
+    border-radius: 5%;
+    border-style: solid;
+    color: white;
+    font-size: 2.5vw;
+}
+button{
+    background-color: rgb(37, 81, 201);
+    border: white;
+    border-radius: 5%;
+    color: white;
+    font-size: 150%;
+    font-weight: bold;
+    height: 3.25vw;
+    padding: 0px 2vw;
+}
+h1{
+    font-size: 3.5vw;
+}
+h2{
+    margin: 1vh;
+}
+#locationContainer{
+    font-size: 1.75vw;
+}
+#currentWeatherDiv{
+    font-size: 1.7vw;
+}
+#currentWeatherDiv .dataGoesHere{
+    font-size: 2.25vw;
+}
+.currentWeatherImageDiv{
+    display: grid;
+    place-items: center;
+    margin: -5px;
+}
+.currentWeatherImage{
+    background-color: #2a34bb9d;
+    border-radius: 5%;
+    display: inline-block;
+    width: 5vw;
+    height: 5vw;
+}
+#tempStuff, #lessImportantStuff{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }

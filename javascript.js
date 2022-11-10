@@ -1,4 +1,7 @@
-const userInput = 'Charlotte';
+let userInput = 'Charlotte';
+function convertKelvin(kelvin) {
+  return (((kelvin - 273.15) * 9) / 5 + 32).toFixed(1);
+}
 async function getMainStuff() {
   const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${userInput}&APPID=651b36dd9ec2d5156544989665f507bd`, { mode: 'cors' });
   const data = await response.json();
@@ -7,15 +10,16 @@ async function getMainStuff() {
     long: data.coord.lon,
     mainWeatherCondition: data.weather[0].main,
     weatherDescription: data.weather[0].description,
-    temp: data.main.temp,
-    feelsLike: data.main.feels_like,
-    tempMax: data.main.temp_max,
-    tempMin: data.main.temp_min,
+    temp: convertKelvin(data.main.temp),
+    feelsLike: convertKelvin(data.main.feels_like),
+    tempMax: convertKelvin(data.main.temp_max),
+    tempMin: convertKelvin(data.main.temp_min),
     humidity: data.main.humidity,
     pressure: data.main.pressure,
     location: data.name,
     country: data.sys.country,
     windSpeed: data.wind.speed,
+    icon: data.weather[0].icon,
   };
   (function displayData() {
     function specificData(location, dataWanted) {
@@ -32,6 +36,7 @@ async function getMainStuff() {
     specificData('windSpeed', 'windSpeed');
     specificData('humidity', 'humidity');
     specificData('pressure', 'pressure');
+    document.querySelector('.currentWeatherImage').src = `http://openweathermap.org/img/w/${currentWeatherData.icon}.png`;
   }());
 }
 function changeWeather() {
@@ -40,3 +45,11 @@ function changeWeather() {
   getMainStuff();
 }
 changeWeather();
+
+function changeLocation() {
+  userInput = document.getElementById('inputBox').value;
+  getMainStuff();
+}
+
+const button = document.querySelector('#searchButton');
+button.addEventListener('click', changeLocation);
