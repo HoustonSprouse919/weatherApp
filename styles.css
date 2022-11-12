@@ -9,17 +9,21 @@ body{
     width: 100vw;
 }
 .mainStuff{
+    background-color: rgba(83, 83, 83, 0.445);
+    border-radius: 5%;
     color: white;
     display: inline-block;
     font-size: 1.25vw;
     font-weight: bold;
     margin: 0px;
+    padding: 2vw;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
 }
 .searchBox{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 input{
     background-color: rgba(128, 128, 128, 0.26);
@@ -53,7 +57,8 @@ button{
     font-size: 150%;
     font-weight: bold;
     height: 3.25vw;
-    padding: 0px 2vw;
+    padding: 0px 1vw;
+    text-align: center;
 }
 h1{
     font-size: 3.5vw;
@@ -65,7 +70,7 @@ h2{
     font-size: 1.75vw;
 }
 #currentWeatherDiv{
-    font-size: 1.7vw;
+    font-size: 1.75vw;
 }
 #currentWeatherDiv .dataGoesHere{
     font-size: 2.25vw;
@@ -76,7 +81,6 @@ h2{
     margin: -5px;
 }
 .currentWeatherImage{
-    background-color: #2a34bb9d;
     border-radius: 5%;
     display: inline-block;
     width: 5vw;
@@ -87,4 +91,60 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@media (max-width: 1300px) {
+    .mainStuff{
+        font-size: 2vw;
+    }
+    h1{
+        font-size: 5vw;
+    }
+    #locationContainer{
+        font-size: 2.25vw;
+    }
+    #currentWeatherDiv{
+        font-size: 2vw;
+    }
+    #currentWeatherDiv .dataGoesHere{
+        font-size: 3vw;
+    }
+    .currentWeatherImage{
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .mainStuff{
+        font-size: 3vw;
+    }
+    h1{
+        font-size: 8vw;
+    }
+    #locationContainer{
+        font-size: 3.25vw;
+    }
+    #currentWeatherDiv{
+        font-size: 3vw;
+    }
+    #currentWeatherDiv .dataGoesHere{
+        font-size: 4vw;
+    }
+    .currentWeatherImage{
+        width: 20vw;
+        height: 20vw;
+    }
+    button{
+        background-color: rgb(37, 81, 201);
+        border: white;
+        border-radius: 5%;
+        color: white;
+        font-size: 150%;
+        font-weight: bold;
+        height: 3.25vw;
+        padding: 0px 1vw;
+        text-align: center;
+        height: 100%;
+    }
 }
